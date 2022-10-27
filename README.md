@@ -11,7 +11,7 @@
  - [X] nodejs framework
  - [X] interchangeable settings within mcmodules.json
   ___________________________________________________
-  -todo
+  - todo
    - [ ] web interface
    - [ ] more stability
    - [ ] add more features

@@ -1,5 +1,5 @@
 # yatabot-4.0
-[![NPM Version](https://badge.fury.io/js/esta.svg?style=flat)](https://npmjs.org/package/esta)
+[![NPM Version](https://badge.fury.io/js/esta.svg?style=flat)](https://npmjs.org/package/esta)  [![NPM Download Stats](https://nodei.co/npm/decache.png?downloads=true)](https://www.npmjs.com/package/decache)
 
 - features
  - [X] discord chat pass trough

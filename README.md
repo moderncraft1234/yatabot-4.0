@@ -10,6 +10,7 @@
  - [X] latest api version for discord and mineflayer
  - [X] nodejs framework
  - [X] interchangeable settings within mcmodules.json
+  ___________________________________________________
   -todo
    - [ ] web interface
    - [ ] more stability

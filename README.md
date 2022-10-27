@@ -1,6 +1,6 @@
 # yatabot-4.0
 
--features
+- features
  - [X] discord chat pass trough
  - [X] minecraft ingame commands
  - [X] ingame browser viewer (prismarine viewer)

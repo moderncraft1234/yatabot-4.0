@@ -29,5 +29,5 @@
  - make sure to link the correct information in the mcmodules.json file for the bot configuration
  - type npm start in ur terminal to startup the bot
 
-
+_____________________________________________________________________
 [foo]: https://github.com/moderncraft1234  "you can visit the rest of the github here"

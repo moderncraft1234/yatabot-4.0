@@ -19,7 +19,8 @@
    - [ ] fix some minor bugs
    - [ ] add the feature so u can signin multiple acounts onto the bot
    - [ ] add an anti afk
-   - [ ] ad a auto reconect
+   - [ ] add a auto reconect
+   - [ ] code a api so u can interact with the bot with other code like python
  
  _____________________________________________________
  

@@ -193,6 +193,7 @@ if ( cmd == "information") {
  if ( cmd == "space") {
 
      const spacemacs = new EmbeddBuilder()
+           .setAuthor(`Arch linux spacemacs`)
            .setDescription(`this bot has been build in spacemacs`)
 
      message.channel.send({embeds : [spacemacs]});

@@ -1,1 +1,1 @@
-yes
+this file will determine if u agree to eula witin the startup script

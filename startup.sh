@@ -1,4 +1,6 @@
 #!/usr/bin/zsh -f
+# property of modernmods1234 (use at ur own discretion)
+
 
 echo "yatabot startup script"
 
@@ -16,7 +18,7 @@ export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || pr
 nvm -v
 
 nvm install 16.17.0
-else
+
     nvm use 16.17.0
 
 

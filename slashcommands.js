@@ -62,7 +62,7 @@ const { bot } = require(".");
           message.channel.send(`discord api is ass`)
       }
       if (cmd == "branch") {
-          const branch EmbeddBuilder()
+          const branch = EmbeddBuilder()
                 .setTitle(`https://github.com/moderncraft1234/yatabot-4.0`)
                 .setDescription(`this is the open source repository`)
 
@@ -70,7 +70,16 @@ const { bot } = require(".");
           message.channel.send({embeds : [branch]});
 
       }
+      const { SlashCommandBuilder } = require('discord.js');
 
+      module.exports = {
+	        data: new SlashCommandBuilder()
+		          .setName('ping')
+		          .setDescription('Replies with Pong!'),
+	        async execute(interaction) {
+		          await interaction.reply('Pong!');
+	        },
+      };
   }
 
 

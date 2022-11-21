@@ -181,6 +181,15 @@ message.channel.send({embeds : [botversion]});
 
       }
 
+if ( cmd === "information") {
+
+    const information = new EmbeddBuilder()
+          .setAuthor(`${host1}`)
+          .setDescription(`yata bot is based uppon the nodejs framework`)
+
+    message.channel.send({embeds : [information]});
+
+}
 
   }
       

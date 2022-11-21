@@ -181,7 +181,7 @@ message.channel.send({embeds : [botversion]});
 
       }
 
-if ( cmd === "information") {
+if ( cmd == "information") {
 
     const information = new EmbeddBuilder()
           .setAuthor(`${host1}`)
@@ -190,8 +190,18 @@ if ( cmd === "information") {
     message.channel.send({embeds : [information]});
 
 }
+ if ( cmd == "space") {
 
+     const spacemacs = new EmbeddBuilder()
+           .setDescription(`this bot has been build in spacemacs`)
+
+     message.channel.send({embeds : [spacemacs]});
+
+ }
+                                                                                                                              }
+                                                                                                                              
   }
+
       
       
               

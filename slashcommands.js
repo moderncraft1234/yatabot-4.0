@@ -61,6 +61,15 @@ const { bot } = require(".");
 
           message.channel.send(`discord api is ass`)
       }
+      if (cmd == "branch") {
+          const branch EmbeddBuilder()
+                .setTitle(`https://github.com/moderncraft1234/yatabot-4.0`)
+                .setDescription(`this is the open source repository`)
+
+
+          message.channel.send({embeds : [branch]});
+
+      }
 
   }
 

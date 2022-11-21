@@ -36,3 +36,5 @@ player.on("queueEnd", (queue) => {
 });
 
 
+// some olde code imported from the music bot makes the bot have a status and react to certain things that happen withinn discord to be later parsed down to the rest of the code
+

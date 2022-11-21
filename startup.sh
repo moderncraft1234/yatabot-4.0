@@ -16,6 +16,10 @@ export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || pr
 nvm -v
 
 nvm install 16.17.0
+else
+    nvm use 16.17.0
+
+
 
 nvm -v
 

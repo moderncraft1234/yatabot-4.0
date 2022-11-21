@@ -4,7 +4,7 @@
   "description": "newer updated modular version of yata bot 3.0 with better features",
   "main": "index.js",
   "scripts": {
-    "test": "node index.js"
+    "start": "node index.js"
   },
   "repository": {
     "type": "git",

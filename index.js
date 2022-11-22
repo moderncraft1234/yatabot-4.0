@@ -133,5 +133,20 @@ bot.on("chat", (username, message) => {
              
 
 
+const { SlashCommandBuilder } = require('discord.js');
+
+module.exports = {
+	  data: new SlashCommandBuilder()
+		    .setName('ping')
+		    .setDescription('Replies with Pong!'),
+	  async execute(interaction) {
+		    await interaction.reply('wow a slash commands so cool wow');
+	  },
+};
+
+
+
 
       client.login(token1)
+
+

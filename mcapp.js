@@ -77,5 +77,3 @@ bot.whisper(username, (`hi there`))
           
       })
 
-
-

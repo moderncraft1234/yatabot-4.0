@@ -31,15 +31,6 @@ message.channel.send({embeds : [learnrighnow]});
 
 }
 
-bot.on("chat" , (username, message) => {
-
-    if (username === bot.username) return
-    if (message === `${prefix}spacemacs`) {
-
-        bot.whisper(username (`this bot has been coded uppon spacemacs `))
-    }
-})
-
 
 bot.on("chat", (username, message) => {
   if (username === bot.username) return 

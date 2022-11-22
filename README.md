@@ -14,7 +14,7 @@
   ___________________________________________________
   - todo
    - [ ] web interface
-   - [ ] more stability
+   - [x] more stability
    - [ ] add more features
    - [ ] fix some minor bugs
    - [ ] add the feature so u can signin multiple acounts onto the bot
@@ -30,5 +30,5 @@
  - make sure to run node v16.17.0 
  - make sure to link the correct information in the mcmodules.json file for the bot configuration
  - type npm start in ur terminal to startup the bot
-
+ - u can use ./startup.sh if u wanna start it up on a linux based distribution so the bot usses a specific node version
 

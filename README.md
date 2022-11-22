@@ -16,7 +16,7 @@
    - [ ] web interface
    - [x] more stability
    - [ ] add more features
-   - [ ] fix some minor bugs
+   - [x] fix some minor bugs
    - [ ] add the feature so u can signin multiple acounts onto the bot
    - [ ] add an anti afk
    - [ ] add a auto reconect

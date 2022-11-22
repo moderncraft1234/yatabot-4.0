@@ -40,13 +40,13 @@ bot.whisper(username, (`this bot is made for the people that apreciate the anarc
 })
 
       
-      botlogs = client.channels.cache.get(channellogs)
+const botlogs = client.channels.cache.get(channellogs)
 bot.on("chat", (username, message) => {
   if (username === bot.username) return
   if (message === `${prefix}location`) {
 bot.whisper(username, (bot.entity.position))
 console.log(`${username} requested location data from within the game sesion`)
-botlogs.send(`${username} requested location data from within the game sesion`)
+      client.channels.cache.get(channellogs).send(`${username} requested location data from within the game sesion`)
         }
       })
 

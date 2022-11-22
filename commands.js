@@ -183,7 +183,7 @@ message.channel.send({embeds : [botversion]});
 
 if ( cmd == "information") {
 
-    const information = new EmbeddBuilder()
+    const information = new EmbedBuilder()
           .setAuthor(`${host1}`)
           .setDescription(`yata bot is based uppon the nodejs framework`)
 
@@ -192,17 +192,10 @@ if ( cmd == "information") {
 }
  if ( cmd == "space") {
 
-     const spacemacs = new EmbeddBuilder()
-           .setAuthor(`Arch linux spacemacs`)
+     const spacemacs = new EmbedBuilder()
            .setDescription(`this bot has been build in spacemacs`)
 
      message.channel.send({embeds : [spacemacs]});
 
  }
-                                                                                                                              }
-                                                                                                                              
-  
-
-      
-      
-              
+                                                                                                                             }

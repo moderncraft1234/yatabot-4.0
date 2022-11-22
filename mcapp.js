@@ -75,5 +75,4 @@ bot.whisper(username, (`hi there`))
           console.log(`I received a message from ${username}: ${message}`)
           bot.whisper(username, 'thanks for ur information')
           
-    
-
+      })

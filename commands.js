@@ -198,4 +198,13 @@ if ( cmd == "information") {
      message.channel.send({embeds : [spacemacs]});
 
  }
+
+ if ( cmd == "kill") {
+     const ingamekill = new EmbedBuilder()
+           .setDescription(`ingame bot killed itself at ${bot.entity.position}`)
+     bot.chat(`/kill`)
+     message.channel.send({embeds : [ingamekill]});
+
+ }
+
                                                                                                                              }

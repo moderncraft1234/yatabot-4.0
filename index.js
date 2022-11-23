@@ -130,10 +130,5 @@ bot.on("chat", (username, message) => {
             })
 
 
-             
 
-
-
-
-
-      client.login(token1)
+client.login(token1)

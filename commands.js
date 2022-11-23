@@ -202,6 +202,7 @@ if ( cmd == "information") {
  if ( cmd == "kill") {
      const ingamekill = new EmbedBuilder()
            .setDescription(`ingame bot killed itself at ${bot.entity.position}`)
+           .setFooter(`${host1}`)
      bot.chat(`/kill`)
      message.channel.send({embeds : [ingamekill]});
 

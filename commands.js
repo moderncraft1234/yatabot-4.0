@@ -205,6 +205,6 @@ if ( cmd == "information") {
            .setFooter(`${host1}`)
      bot.chat(`/kill`)
      message.channel.send({embeds : [ingamekill]});
-
+ }
  }
 

@@ -222,5 +222,41 @@ if (cmd == "topic") {
 
     message.channel.send({ embeds : [topicupdater]});
 
+
+
 }
-                                                                                                                             }
+
+
+ const logchannel =  client.channels.cache.get(channellogs)
+
+
+const mcchatchan = client.channels.cache.get(discordchannel)
+
+bot.on('death', () => {
+ logchannel.send(`bot died at ${bot.entity.position}`)
+    mcchatchan.setTopic(`bot is located at ${bot.entity.position}  bot is curently online on ${host1} bot username is ${bot.entity.username} `)
+   
+  })
+ 
+
+bot.on('playerJoined', (player) => {
+if (player.username !== bot.username) {
+
+    const onjoin = new EmbedBuilder()
+          .setDescription(`${player.username} has joined ${host1} `)
+          .setAuthor(`${host1}`)
+
+    logchannel.send({embeds : [onjoin]});
+  }
+  })
+
+ bot.on('playerLeft', (player) => {
+if (player.username === bot.username) return
+     const onleave = new EmbedBuilder()
+           .setDescription(`${player.username} has left ${host1} `)
+           .setAuthor(${host1})
+
+     logchannel.send({ embeds : [onleave]});
+ 
+ })
+}

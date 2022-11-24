@@ -289,4 +289,70 @@ if (player.username === bot.username) return
      logchannel.send({ embeds : [foodie] });
 })
 
+ https.get("https://www.reddit.com/r/femyiff/.json?limit=100", result => {
+ var body = '';
+ result.on('data', chunk => {
+ body += chunk;
+});
+
+ result
+ .on('end', () => {
+ var response = JSON.parse(body);
+  var index = response.data.children[Math.floor(Math.random() * 99) + 1].data;
+ var link = 'https://reddit.com/' + index.permalink;
+var image = index.preview.images[0].source.url.replace('&amp;', '&');
+  var title = index.title;
+
+     if (cmd == "femyiff") {
+         const horny = new EmbedBuilder()
+               .setTitle(`${title}`)
+               .setImage(image)
+               .setDescription(`from ${link}`)
+
+         message.channel.send({ embeds : [horny]});
+     }
+ })
+
+
+
+          })
+
+
+
+  https.get("https://www.reddit.com/r/yiffinhell/.json?limit=100", result => {
+  var body = '';
+result.on('data', chunk => {
+      body += chunk;
+   });
+
+ result
+  .on('end', () => {
+ var response = JSON.parse(body);
+  var index = response.data.children[Math.floor(Math.random() * 99) + 1].data;
+ var link = 'https://reddit.com/' + index.permalink;
+ var image = index.preview.images[0].source.url.replace('&amp;', '&');
+ var title = index.title;
+
+ if (cmd == "yiffinhell") {
+ const horny2 = new EmbedBuilder()
+ .setTitle(`${title}`)
+  .setImage(image)
+.setDescription(`from ${link}`)
+
+message.channel.send({ embeds : [horny2]});
 }
+})
+
+
+
+ })
+   }
+
+
+
+
+ 
+
+
+
+

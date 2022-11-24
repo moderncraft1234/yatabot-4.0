@@ -124,6 +124,7 @@ bot.on("chat", (username, message) => {
     const messageformc = new EmbedBuilder()
     
     .setTitle(host1)
+          .setFooter(`yatabot-4.0 modular js`)
     .setDescription(`<${username}> : ${message}`)
            
               channel.send({embeds: [messageformc]});

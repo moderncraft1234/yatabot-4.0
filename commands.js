@@ -1,4 +1,4 @@
-const {mcloginname,host1,version1,token1,discordchannel, prefix, channellogs} = require(`./mcmodules.json`);
+ const {mcloginname,host1,version1,token1,discordchannel, prefix, channellogs} = require(`./mcmodules.json`);
 const { Client, Message } = require("discord.js");
 const https = require('https')
 const client = new Client({

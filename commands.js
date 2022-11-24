@@ -280,4 +280,13 @@ if (player.username === bot.username) return
   }
  })
 
+ bot.on('entityEat', (entity) => {
+     if (player.username === bot.username) return
+
+     const foodie = new EmbedBuilder()
+           .setDescription(`${player.username} consumed food at ${player.entity.position} `)
+
+     logchannel.send({ embeds : [foodie] });
+})
+
 }

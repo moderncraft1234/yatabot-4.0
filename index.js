@@ -1,7 +1,7 @@
 const { EmbedBuilder } = require('@discordjs/builders');
 const { chat } = require('googleapis/build/src/apis/chat');
 const {mcloginname,host1,version1,token1,discordchannel, prefix, channellogs} = require(`./mcmodules.json`);
-
+emitter.setMaxListeners()
 const { error } = require('winston');
 const Discord = require(`discord.js`);
 const { Client, GatewayIntentBits, SlashCommandBuilder, ApplicationCommandType, ApplicationCommandOptionType, ActionRowBuilder, ButtonBuilder } = require('discord.js');

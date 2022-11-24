@@ -46,7 +46,7 @@ if (message === `${prefix}brand`) {
 }
                                       })
 
-const logs = client.channels.cache.get(channellogs)
+const logchannel = client.channels.cache.get(channellogs)
 
 bot.on("chat", (username, message) => {
 if (username === bot.username) return
@@ -62,6 +62,69 @@ if (message === `${prefix}locate`) {
             bot.whisper(username, (`updated version of yata-bot 3.0 only parsing trough mineflayer api`))
               }
             })
+
+
+bot.on("chat", (username, message) => {
+    if (username === bot.username) return
+    if (message === `${prefix}emacs`) {
+        bot.whisper(username, (`this bot has been fully developed in emacs the open source code editor`))
+    }
+})
+
+bot.on("chat", (username, message) => {
+    if (username === bot.username) return
+    if (message === `${prefix}group`) {
+        bot.whisper(username, (`this bot is run by the spawn cult group a 9b9t group and the bot is maintained by moderncraft AKA Villager number 96`))
+            }
+})
+
+
+
+
+bot.on('playerJoined', (player) => {
+if (username !== bot.username) {
+
+    const onjoin = new EmbedBuilder()
+          .setDescription(`${player.username} has joined ${host1} `)
+          
+
+    let logs = client.channels.cache.get(channellogs)
+
+   logs.send({embeds : [onjoin]});
+  }
+  })
+
+ bot.on('playerLeft', (player) => {
+if (player.username === bot.username) return
+     const onleave = new EmbedBuilder()
+           .setDescription(`${player.username} has left ${host1} `)
+           
+
+     let logs = client.channels.cache.get(channellogs)
+
+
+    logs.send({ embeds : [onleave]});
+ 
+ })
+
+
+
+
+
+
+
+
+bot.on("chat", (username, message) => {
+    if (message === `${prefix}suicide`) {
+        bot.whisper(username, (`bot killed itself`))
+        
+
+        bot.chat(`/kill`)
+    }
+})
+
+
+
 
             bot.once('spawn', () => {
               mineflayerViewer(bot, { port: 3009, firstPerson: false })
@@ -145,7 +208,7 @@ if (message === `${prefix}locate`) {
                 //If 4h-2min => 04:02
 
               channel.send({embeds: [messageformc]});
-                client.channels.cache.get(channellogs).setTopic(`last message on ${host1} was at ${time} and sended by ${player.username} `)
+                client.channels.cache.get(channellogs).setTopic(`last message on ${host1} was at ${time} and sended by ${username} `)
                 
             })
 

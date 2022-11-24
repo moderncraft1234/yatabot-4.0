@@ -12,7 +12,7 @@ const client = new Client({
   const {dependencies,} = require(`./package.json`);
 const { bot } = require(".");
  
-module.exports = async (message, cmd, args, player, client, mcloginname,host1,version1,token1,discordchannel, prefix,bot) => {
+module.exports = async (message, cmd, args, player, client, mcloginname,host1,version1,token1,discordchannel, prefix,bot,on,mineflayer) => {
 
   const username = bot.player
 

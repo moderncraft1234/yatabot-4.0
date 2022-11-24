@@ -233,9 +233,14 @@ if (cmd == "topic") {
 const mcchatchan = client.channels.cache.get(discordchannel)
 
 bot.on('death', () => {
- logchannel.send(`bot died at ${bot.entity.position}`)
+ 
     mcchatchan.setTopic(`bot is located at ${bot.entity.position}  bot is curently online on ${host1} bot username is ${bot.entity.username} `)
-   
+
+    const ondeath = new EmbedBuilder()
+          .setDescription(`bot died at ${bot.entity.position}`)
+          
+
+    logchannel.send({ embeds : [ondeath]});
   })
  
 
@@ -244,7 +249,7 @@ if (player.username !== bot.username) {
 
     const onjoin = new EmbedBuilder()
           .setDescription(`${player.username} has joined ${host1} `)
-          .setAuthor(`${host1}`)
+          
 
     logchannel.send({embeds : [onjoin]});
   }
@@ -254,9 +259,25 @@ if (player.username !== bot.username) {
 if (player.username === bot.username) return
      const onleave = new EmbedBuilder()
            .setDescription(`${player.username} has left ${host1} `)
-           .setAuthor(${host1})
+           
 
      logchannel.send({ embeds : [onleave]});
  
  })
+
+ bot.on('rain', () => {
+
+     const onrain = new EmbedBuilder()
+           .setDescription(`it started raining on  ${host1}`)
+
+     const norain = new EmbedBuilder()
+           .setDescription(`it stopped raining on ${host1}`)
+
+  if (bot.isRaining) {
+      logchannel.send({ embeds : [onrain]});
+ } else {
+     logchannel.send({ embeds : [norain]});
+  }
+ })
+
 }

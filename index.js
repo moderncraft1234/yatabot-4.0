@@ -1,8 +1,8 @@
 const { EmbedBuilder } = require('@discordjs/builders');
 const { chat } = require('googleapis/build/src/apis/chat');
+const {mcloginname,host1,version1,token1,discordchannel, prefix, channellogs} = require(`./mcmodules.json`);
 
 const { error } = require('winston');
-const {mcloginname,host1,version1,token1,discordchannel, prefix, botid, } = require(`./mcmodules.json`);
 const Discord = require(`discord.js`);
 const { Client, GatewayIntentBits, SlashCommandBuilder, ApplicationCommandType, ApplicationCommandOptionType, ActionRowBuilder, ButtonBuilder } = require('discord.js');
 const client = new Client({
@@ -39,8 +39,22 @@ bot.on("chat", (username, message) => {
     console.log(`${username}> ${message}`)
       })
 
+bot.on("chat", (username, message) => {
+ if (username === bot.username) return
+if (message === `${prefix}brand`) {
+ bot.whisper(username, (bot.game.serverBrand))
+}
+                                      })
 
+const logs = client.channels.cache.get(channellogs)
 
+bot.on("chat", (username, message) => {
+if (username === bot.username) return
+if (message === `${prefix}locate`) {
+    bot.whisper(username, (` bot is located ${bot.entity.position}`))
+
+   }
+  })
 
       bot.on("chat", (username, message) => {
         if (username === bot.username) return
@@ -125,8 +139,14 @@ bot.on("chat", (username, message) => {
     
     .setTitle(host1)
     .setDescription(`<${username}> : ${message}`)
-           
+
+                let date = new Date();
+                let time = ((date.getHours().toString()).length>1? date.getHours() : "0"+date.getHours()) +":"+ ((date.getMinutes().toString()).length>1? date.getMinutes() : "0"+date.getMinutes());
+                //If 4h-2min => 04:02
+
               channel.send({embeds: [messageformc]});
+                client.channels.cache.get(channellogs).setTopic(`last message on ${host1} was at ${time} and sended by ${player.username} `)
+                
             })
 
 

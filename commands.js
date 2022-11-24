@@ -202,9 +202,25 @@ if ( cmd == "information") {
  if ( cmd == "kill") {
      const ingamekill = new EmbedBuilder()
            .setDescription(`ingame bot killed itself at ${bot.entity.position}`)
-           .setFooter(`${host1}`)
+           .setTitle(` bot died on${host1}`)
      bot.chat(`/kill`)
      message.channel.send({embeds : [ingamekill]});
  }
- }
+if (cmd == "topic") {
 
+    const topicupdater = new EmbedBuilder()
+          .setDescription(`updated <#${discordchannel}>`)
+
+    const topichannel =  client.channels.cache.get(discordchannel)
+
+          topichannel.setTopic(`bot is located at ${bot.entity.position}  bot is curently online on ${host1} bot username is ${bot.entity.username} `)
+
+    const updatedtopic = new EmbedBuilder()
+          .setDescription(`updated channel topic manually`)
+
+    topichannel.send({ embeds : [updatedtopic]});
+
+    message.channel.send({ embeds : [topicupdater]});
+
+}
+                                                                                                                             }

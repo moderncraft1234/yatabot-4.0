@@ -14,14 +14,16 @@
   ___________________________________________________
   - todo
    - [ ] web interface
-   - [x] more stability
+   - [ ] more stability
    - [ ] add more features
    - [x] fix some minor bugs
    - [ ] add the feature so u can signin multiple acounts onto the bot
    - [ ] add an anti afk
    - [ ] add a auto reconect
    - [ ] code a api so u can interact with the bot with other code like python
- 
+   - [ ] add better logging capabillities to the bot to make it easier to collect minecraft data and to port that data to discord
+   - [ ] add the posibility to inferface the data with a grafana server
+   - [ ] ask more people to code on the bot
  _____________________________________________________
  
  # Setup

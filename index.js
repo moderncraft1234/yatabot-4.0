@@ -1,8 +1,7 @@
 const { EmbedBuilder } = require('@discordjs/builders');
 const { chat } = require('googleapis/build/src/apis/chat');
-
+const {mcloginname,host1,version1,token1,discordchannel, prefix, channellogs} = require(`./mcmodules.json`);
 const { error } = require('winston');
-const {mcloginname,host1,version1,token1,discordchannel, prefix, botid, } = require(`./mcmodules.json`);
 const Discord = require(`discord.js`);
 const { Client, GatewayIntentBits, SlashCommandBuilder, ApplicationCommandType, ApplicationCommandOptionType, ActionRowBuilder, ButtonBuilder } = require('discord.js');
 const client = new Client({
@@ -39,8 +38,22 @@ bot.on("chat", (username, message) => {
     console.log(`${username}> ${message}`)
       })
 
+bot.on("chat", (username, message) => {
+ if (username === bot.username) return
+if (message === `${prefix}brand`) {
+ bot.whisper(username, (bot.game.serverBrand))
+}
+                                      })
 
+const logchannel = client.channels.cache.get(channellogs)
 
+bot.on("chat", (username, message) => {
+if (username === bot.username) return
+if (message === `${prefix}locate`) {
+    bot.whisper(username, (` bot is located ${bot.entity.position}`))
+
+   }
+  })
 
       bot.on("chat", (username, message) => {
         if (username === bot.username) return
@@ -48,6 +61,61 @@ bot.on("chat", (username, message) => {
             bot.whisper(username, (`updated version of yata-bot 3.0 only parsing trough mineflayer api`))
               }
             })
+
+
+bot.on("chat", (username, message) => {
+    if (username === bot.username) return
+    if (message === `${prefix}emacs`) {
+        bot.whisper(username, (`this bot has been fully developed in emacs the open source code editor`))
+    }
+})
+
+bot.on("chat", (username, message) => {
+    if (username === bot.username) return
+    if (message === `${prefix}group`) {
+        bot.whisper(username, (`this bot is run by the spawn cult group a 9b9t group and the bot is maintained by moderncraft AKA Villager number 96`))
+            }
+})
+
+
+
+
+bot.on('playerJoined', (player) => {
+if (username !== bot.username) {
+
+    const onjoin = new EmbedBuilder()
+          .setDescription(`${player.username} has joined ${host1} `)
+          
+
+    let logs = client.channels.cache.get(channellogs)
+
+   logs.send({embeds : [onjoin]});
+  }
+  })
+
+ bot.on('playerLeft', (player) => {
+if (player.username === bot.username) return
+     const onleave = new EmbedBuilder()
+           .setDescription(`${player.username} has left ${host1} `)
+           
+
+     let logs = client.channels.cache.get(channellogs)
+
+
+    logs.send({ embeds : [onleave]});
+ 
+ })
+
+
+
+
+
+
+
+
+
+
+
 
             bot.once('spawn', () => {
               mineflayerViewer(bot, { port: 3009, firstPerson: false })
@@ -125,8 +193,14 @@ bot.on("chat", (username, message) => {
     
     .setTitle(host1)
     .setDescription(`<${username}> : ${message}`)
-           
-              channel.send({embeds: [messageformc]});
+
+                let date = new Date();
+                let time = ((date.getHours().toString()).length>1? date.getHours() : "0"+date.getHours()) +":"+ ((date.getMinutes().toString()).length>1? date.getMinutes() : "0"+date.getMinutes());
+                //If 4h-2min => 04:02
+
+              channel.send({embeds: [messageformc]})
+                client.channels.cache.get(channellogs).setTopic(`last message on ${host1} was at ${time} and sended by ${username} `)
+                
             })
 
 

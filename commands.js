@@ -1,5 +1,6 @@
-const {mcloginname,host1,version1,token1,discordchannel, prefix, channellogs} = require(`./mcmodules.json`);
+ const {mcloginname,host1,version1,token1,discordchannel, prefix, channellogs} = require(`./mcmodules.json`);
 const { Client, Message } = require("discord.js");
+require('minecraft-data')(bot.version)
 const https = require('https')
 const client = new Client({
     restTimeOffset: 0,
@@ -171,7 +172,7 @@ message.channel.send({ embeds: [botpositioning]});
 const botversion = new EmbedBuilder()
 .setTitle(`bot runs on`)
 .setDescription(`bot version is yatabot 4.0 the newer iteration of the yatabot this time separated code with modules`)
-
+  
 message.channel.send({embeds : [botversion]});
 
             }
@@ -202,9 +203,174 @@ if ( cmd == "information") {
  if ( cmd == "kill") {
      const ingamekill = new EmbedBuilder()
            .setDescription(`ingame bot killed itself at ${bot.entity.position}`)
+           .setTitle(` bot died on${host1}`)
      bot.chat(`/kill`)
      message.channel.send({embeds : [ingamekill]});
-
  }
+if (cmd == "topic") {
+
+    const topicupdater = new EmbedBuilder()
+          .setDescription(`updated <#${discordchannel}>`)
+
+    const topichannel =  client.channels.cache.get(discordchannel)
+
+          topichannel.setTopic(`bot is located at ${bot.entity.position}  bot is curently online on ${host1} bot username is ${bot.entity.username} `)
+
+    const updatedtopic = new EmbedBuilder()
+          .setDescription(`updated channel topic manually`)
+
+    topichannel.send({ embeds : [updatedtopic]});
+
+    message.channel.send({ embeds : [topicupdater]});
+
+
+
+}
+
+
+ const logchannel =  client.channels.cache.get(channellogs)
+
+
+const mcchatchan = client.channels.cache.get(discordchannel)
+
+bot.on('death', () => {
+ 
+    mcchatchan.setTopic(`bot is located at ${bot.entity.position}  bot is curently online on ${host1} bot username is ${bot.entity.username} `)
+
+    const ondeath = new EmbedBuilder()
+          .setDescription(`bot died at ${bot.entity.position}`)
+          
+
+    logchannel.send({ embeds : [ondeath]});
+  })
+ 
+
+bot.on('playerJoined', (player) => {
+if (player.username !== bot.username) {
+
+    const onjoin = new EmbedBuilder()
+          .setDescription(`${player.username} has joined ${host1} `)
+          
+
+    logchannel.send({embeds : [onjoin]});
+  }
+  })
+
+ bot.on('playerLeft', (player) => {
+if (player.username === bot.username) return
+     const onleave = new EmbedBuilder()
+           .setDescription(`${player.username} has left ${host1} `)
+           
+
+     logchannel.send({ embeds : [onleave]});
+ 
+ })
+
+ bot.on('rain', () => {
+
+     const onrain = new EmbedBuilder()
+           .setDescription(`it started raining on  ${host1}`)
+
+     const norain = new EmbedBuilder()
+           .setDescription(`it stopped raining on ${host1}`)
+
+  if (bot.isRaining) {
+      logchannel.send({ embeds : [onrain]});
+ } else {
+     logchannel.send({ embeds : [norain]});
+  }
+ })
+
+ bot.on('entityEat', (entity) => {
+     if (player.username === bot.username) return
+
+     const foodie = new EmbedBuilder()
+           .setDescription(`${player.username} consumed food at ${player.entity.position} `)
+
+     logchannel.send({ embeds : [foodie] });
+})
+
+ https.get("https://www.reddit.com/r/femyiff/.json?limit=100", result => {
+ var body = '';
+ result.on('data', chunk => {
+ body += chunk;
+});
+
+ result
+ .on('end', () => {
+ var response = JSON.parse(body);
+  var index = response.data.children[Math.floor(Math.random() * 99) + 1].data;
+ var link = 'https://reddit.com/' + index.permalink;
+var image = index.preview.images[0].source.url.replace('&amp;', '&');
+  var title = index.title;
+
+     if (cmd == "femyiff") {
+         const horny = new EmbedBuilder()
+               .setTitle(`${title}`)
+               .setImage(image)
+               .setDescription(`from ${link}`)
+
+         message.channel.send({ embeds : [horny]});
+     }
+ })
+
+
+
+          })
+
+
+
+  https.get("https://www.reddit.com/r/yiffinhell/.json?limit=100", result => {
+  var body = '';
+result.on('data', chunk => {
+      body += chunk;
+   });
+
+ result
+  .on('end', () => {
+ var response = JSON.parse(body);
+  var index = response.data.children[Math.floor(Math.random() * 99) + 1].data;
+ var link = 'https://reddit.com/' + index.permalink;
+ var image = index.preview.images[0].source.url.replace('&amp;', '&');
+ var title = index.title;
+
+ if (cmd == "yiffinhell") {
+ const horny2 = new EmbedBuilder()
+ .setTitle(`${title}`)
+  .setImage(image)
+.setDescription(`from ${link}`)
+
+message.channel.send({ embeds : [horny2]});
+}
+})
+
+
+
+ })
+   
+
+
+
+
+
+
+
+
 
                                                                                                                              }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

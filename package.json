@@ -38,6 +38,7 @@
     "googleapis": "^92.0.0",
     "https": "^1.0.0",
     "jfile": "^1.1.12",
+    "minecraft-data": "^3.18.0",
     "mineflayer": "^4.4.0",
     "mineflayer-armor-manager": "^1.4.2",
     "mineflayer-cmd": "^1.1.3",

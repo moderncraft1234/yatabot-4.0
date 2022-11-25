@@ -1,7 +1,6 @@
 const { EmbedBuilder } = require('@discordjs/builders');
 const { chat } = require('googleapis/build/src/apis/chat');
 const {mcloginname,host1,version1,token1,discordchannel, prefix, channellogs} = require(`./mcmodules.json`);
-emitter.setMaxListeners()
 const { error } = require('winston');
 const Discord = require(`discord.js`);
 const { Client, GatewayIntentBits, SlashCommandBuilder, ApplicationCommandType, ApplicationCommandOptionType, ActionRowBuilder, ButtonBuilder } = require('discord.js');
@@ -114,14 +113,6 @@ if (player.username === bot.username) return
 
 
 
-bot.on("chat", (username, message) => {
-    if (message === `${prefix}suicide`) {
-        bot.whisper(username, (`bot killed itself`))
-        
-
-        bot.chat(`/kill`)
-    }
-})
 
 
 
@@ -207,7 +198,7 @@ bot.on("chat", (username, message) => {
                 let time = ((date.getHours().toString()).length>1? date.getHours() : "0"+date.getHours()) +":"+ ((date.getMinutes().toString()).length>1? date.getMinutes() : "0"+date.getMinutes());
                 //If 4h-2min => 04:02
 
-              channel.send({embeds: [messageformc]});
+              channel.send({embeds: [messageformc]})
                 client.channels.cache.get(channellogs).setTopic(`last message on ${host1} was at ${time} and sended by ${username} `)
                 
             })

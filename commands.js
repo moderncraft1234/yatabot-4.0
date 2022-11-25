@@ -171,7 +171,7 @@ message.channel.send({ embeds: [botpositioning]});
 const botversion = new EmbedBuilder()
 .setTitle(`bot runs on`)
 .setDescription(`bot version is yatabot 4.0 the newer iteration of the yatabot this time separated code with modules`)
-
+  
 message.channel.send({embeds : [botversion]});
 
             }

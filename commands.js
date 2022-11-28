@@ -198,6 +198,12 @@ if ( cmd == "information") {
 
      message.channel.send({embeds : [spacemacs]});
 
+
+     if (cmd == "hello") {
+
+         message.channel.send(`hello worl`)
+     }
+
  }
 
  if ( cmd == "kill") {

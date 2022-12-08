@@ -206,6 +206,10 @@ if ( cmd == "information") {
 
  }
 
+
+   
+
+
  if ( cmd == "kill") {
      const ingamekill = new EmbedBuilder()
            .setDescription(`ingame bot killed itself at ${bot.entity.position}`)

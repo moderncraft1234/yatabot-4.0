@@ -70,6 +70,15 @@ const { bot } = require(".");
           message.channel.send({embeds : [branch]});
 
       }
+      if (cmd === `hithere`) {
+
+          const hithere = new EmbedBuilder()
+                .setTitle(`hi there`)
+                .setDescription(`linux is the best operating system `)
+
+          messge.channel.send({embeds : [hithere]});
+
+      }
   }
 
 

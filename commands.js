@@ -10,23 +10,23 @@ const client = new Client({
   const { MessageAttachment, EmbedBuilder } = require('discord.js');
 
   botlogs = client.channels.cache.get(channellogs)
- 
+
   const {dependencies,} = require(`./package.json`);
 const { bot } = require(".");
- 
+
 module.exports = async (message, cmd, args, player, client, mcloginname,host1,version1,token1,discordchannel, prefix,bot) => {
 
     const username = bot.player
 
     if (cmd === `playerlist`) {
 
-      const other1 = new EmbedBuilder() 
-      .setDescription (` the server has ${Object.keys(bot.players).length} players online [${host1}]`)    
+      const other1 = new EmbedBuilder()
+      .setDescription (` the server has ${Object.keys(bot.players).length} players online [${host1}]`)
+
       .addFields(
       { name: 'Players curently', value: `Online: ${Object.keys(bot.players).join(' ,').slice(0, 1000)}` }
       )
       .setTimestamp()
-     
 
         message.channel.send({ embeds: [other1] });
      }
@@ -87,8 +87,6 @@ const shit = new EmbedBuilder()
      }
 
 
-     
-      
 
 
      if (cmd === `info`) {
@@ -99,14 +97,11 @@ const information = new EmbedBuilder()
 
       message.content.send({ embeds: [info]});
      }
-  
-    
-  
+
   bot.on("chat", (username, message) => {
     if (username === bot.username) return
     if (message === `${prefix}help`) {
      bot.chat(`welcome to yata bot 4.0 this is a new iteration of yata bot this is curently still in development and developed in private`)
-          
          }
         })
 
@@ -130,7 +125,7 @@ const information = new EmbedBuilder()
 
                  .setTitle(`serverbrand of ${host1}`)
                  .setDescription(`${bot.game.serverBrand}`)
-              
+
                  message.channel.send({ embeds : [brandserver]});
 
                     }
@@ -172,7 +167,6 @@ message.channel.send({ embeds: [botpositioning]});
 const botversion = new EmbedBuilder()
 .setTitle(`bot runs on`)
 .setDescription(`bot version is yatabot 4.0 the newer iteration of the yatabot this time separated code with modules`)
-  
 message.channel.send({embeds : [botversion]});
 
             }
@@ -205,9 +199,6 @@ if ( cmd == "information") {
      }
 
  }
-
-
-   
 
 
  if ( cmd == "kill") {
@@ -292,8 +283,6 @@ message.channel.send({ embeds : [horny2]});
 
 
  })
-   
-
 
 
 
@@ -303,12 +292,6 @@ message.channel.send({ embeds : [horny2]});
 
 
                                                                                                                              }
-
-
-
-
-
-
 
 
 

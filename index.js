@@ -1,4 +1,4 @@
-const { EmbedBuilder } = require('@discordjs/builders');
+const { EmbedBuilder } = require('@discordjs/builders'); 
 const { chat } = require('googleapis/build/src/apis/chat');
 const {mcloginname,host1,version1,token1,discordchannel, prefix, channellogs} = require(`./mcmodules.json`);
 const { error } = require('winston');
@@ -85,7 +85,6 @@ if (username !== bot.username) {
 
     const onjoin = new EmbedBuilder()
           .setDescription(`${player.username} has joined ${host1} `)
-          
 
     let logs = client.channels.cache.get(channellogs)
 
@@ -97,23 +96,13 @@ if (username !== bot.username) {
 if (player.username === bot.username) return
      const onleave = new EmbedBuilder()
            .setDescription(`${player.username} has left ${host1} `)
-           
 
      let logs = client.channels.cache.get(channellogs)
 
 
     logs.send({ embeds : [onleave]});
- 
+
  })
-
-
-
-
-
-
-
-
-
 
 
 
@@ -122,9 +111,6 @@ if (player.username === bot.username) return
               console.log(`minecraft username is ${bot.entity.username}`)
               var delayInMilliseconds = 30000;
             })
-       
-   
-            
 
 
 
@@ -145,7 +131,8 @@ if (player.username === bot.username) return
             });
             require('./events')(client)
             client.on("messageCreate", async (message) => {
-              if (!message.guild || message.author.bot) return;
+                
+ if (!message.guild || message.author.bot) return;
               if (!message.content.startsWith(prefix)) return;
             
               let args = message.content.slice(prefix.length).trim().split(" ");
@@ -170,7 +157,6 @@ if (player.username === bot.username) return
                 process.exit(1)
               }
             })
-            
             // Redirect Discord messages to in-game chat
             client.on('messageCreate', message => {
               // Only handle messages in specified channel
@@ -179,10 +165,9 @@ if (player.username === bot.username) return
               if (message.author.id === client.user.id) return
 
               if (username === bot.entity.username) return
-            
+
               bot.chat(`${message.author.tag}: ${message.content}`)
             })
-            
             // Redirect in-game messages to Discord channel
             bot.on('chat', (username, message) => {
               // Ignore messages from the bot itself
@@ -190,17 +175,17 @@ if (player.username === bot.username) return
 
 //embedd for minecraft chat pass trough
     const messageformc = new EmbedBuilder()
-    
+
     .setTitle(host1)
     .setDescription(`<${username}> : ${message}`)
 
-                let date = new Date();
-                let time = ((date.getHours().toString()).length>1? date.getHours() : "0"+date.getHours()) +":"+ ((date.getMinutes().toString()).length>1? date.getMinutes() : "0"+date.getMinutes());
-                //If 4h-2min => 04:02
+                // let date = new date();
+                // let time = ((date.gethours().tostring()).length>1? date.gethours() : "0"+date.gethours()) +":"+ ((date.getminutes().tostring()).length>1? date.getminutes() : "0"+date.getminutes());
+                // //if 4h-2min => 04:02
 
               channel.send({embeds: [messageformc]})
-                client.channels.cache.get(channellogs).setTopic(`last message on ${host1} was at ${time} and sended by ${username} `)
-                
+                client.channels.cache.get(channellogs).setTopic(`last known bot location ${bot.entity.position} `)
+
             })
 
 

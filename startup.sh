@@ -25,7 +25,9 @@ nvm install 16.17.0
 
 nvm -v
 
-node index.js >> startup.log
+node index.js &> startup.log
 
+echo "bot logs can be founded within statup.log"
 
+cat startup.log
 

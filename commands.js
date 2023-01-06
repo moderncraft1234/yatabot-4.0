@@ -10,23 +10,23 @@ const client = new Client({
   const { MessageAttachment, EmbedBuilder } = require('discord.js');
 
   botlogs = client.channels.cache.get(channellogs)
- 
+
   const {dependencies,} = require(`./package.json`);
 const { bot } = require(".");
- 
+
 module.exports = async (message, cmd, args, player, client, mcloginname,host1,version1,token1,discordchannel, prefix,bot) => {
 
     const username = bot.player
 
     if (cmd === `playerlist`) {
 
-      const other1 = new EmbedBuilder() 
-      .setDescription (` the server has ${Object.keys(bot.players).length} players online [${host1}]`)    
+      const other1 = new EmbedBuilder()
+      .setDescription (` the server has ${Object.keys(bot.players).length} players online [${host1}]`)
+
       .addFields(
       { name: 'Players curently', value: `Online: ${Object.keys(bot.players).join(' ,').slice(0, 1000)}` }
       )
       .setTimestamp()
-     
 
         message.channel.send({ embeds: [other1] });
      }
@@ -87,8 +87,6 @@ const shit = new EmbedBuilder()
      }
 
 
-     
-      
 
 
      if (cmd === `info`) {
@@ -99,14 +97,11 @@ const information = new EmbedBuilder()
 
       message.content.send({ embeds: [info]});
      }
-  
-    
-  
+
   bot.on("chat", (username, message) => {
     if (username === bot.username) return
     if (message === `${prefix}help`) {
      bot.chat(`welcome to yata bot 4.0 this is a new iteration of yata bot this is curently still in development and developed in private`)
-          
          }
         })
 
@@ -130,7 +125,7 @@ const information = new EmbedBuilder()
 
                  .setTitle(`serverbrand of ${host1}`)
                  .setDescription(`${bot.game.serverBrand}`)
-              
+
                  message.channel.send({ embeds : [brandserver]});
 
                     }
@@ -172,7 +167,6 @@ message.channel.send({ embeds: [botpositioning]});
 const botversion = new EmbedBuilder()
 .setTitle(`bot runs on`)
 .setDescription(`bot version is yatabot 4.0 the newer iteration of the yatabot this time separated code with modules`)
-  
 message.channel.send({embeds : [botversion]});
 
             }
@@ -198,7 +192,14 @@ if ( cmd == "information") {
 
      message.channel.send({embeds : [spacemacs]});
 
+
+     if (cmd == "hello") {
+
+         message.channel.send(`hello worl`)
+     }
+
  }
+
 
  if ( cmd == "kill") {
      const ingamekill = new EmbedBuilder()
@@ -223,72 +224,7 @@ if (cmd == "topic") {
 
     message.channel.send({ embeds : [topicupdater]});
 
-
-
 }
-
-
- const logchannel =  client.channels.cache.get(channellogs)
-
-
-const mcchatchan = client.channels.cache.get(discordchannel)
-
-bot.on('death', () => {
- 
-    mcchatchan.setTopic(`bot is located at ${bot.entity.position}  bot is curently online on ${host1} bot username is ${bot.entity.username} `)
-
-    const ondeath = new EmbedBuilder()
-          .setDescription(`bot died at ${bot.entity.position}`)
-          
-
-    logchannel.send({ embeds : [ondeath]});
-  })
- 
-
-bot.on('playerJoined', (player) => {
-if (player.username !== bot.username) {
-
-    const onjoin = new EmbedBuilder()
-          .setDescription(`${player.username} has joined ${host1} `)
-          
-
-    logchannel.send({embeds : [onjoin]});
-  }
-  })
-
- bot.on('playerLeft', (player) => {
-if (player.username === bot.username) return
-     const onleave = new EmbedBuilder()
-           .setDescription(`${player.username} has left ${host1} `)
-           
-
-     logchannel.send({ embeds : [onleave]});
- 
- })
-
- bot.on('rain', () => {
-
-     const onrain = new EmbedBuilder()
-           .setDescription(`it started raining on  ${host1}`)
-
-     const norain = new EmbedBuilder()
-           .setDescription(`it stopped raining on ${host1}`)
-
-  if (bot.isRaining) {
-      logchannel.send({ embeds : [onrain]});
- } else {
-     logchannel.send({ embeds : [norain]});
-  }
- })
-
- bot.on('entityEat', (entity) => {
-     if (player.username === bot.username) return
-
-     const foodie = new EmbedBuilder()
-           .setDescription(`${player.username} consumed food at ${player.entity.position} `)
-
-     logchannel.send({ embeds : [foodie] });
-})
 
  https.get("https://www.reddit.com/r/femyiff/.json?limit=100", result => {
  var body = '';
@@ -347,8 +283,6 @@ message.channel.send({ embeds : [horny2]});
 
 
  })
-   
-
 
 
 
@@ -358,12 +292,6 @@ message.channel.send({ embeds : [horny2]});
 
 
                                                                                                                              }
-
-
-
-
-
-
 
 
 

@@ -8,10 +8,10 @@ const client = new Client({
   });
   const { MessageAttachment, EmbedBuilder } = require('discord.js');
 
- 
+
   const {dependencies,} = require(`./package.json`);
 const { bot } = require(".");
- 
+
 module.exports = async (message, cmd, args, player, client, mcloginname,host1,version1,token1,discordchannel, prefix,bot,on,mineflayer) => {
 
   const username = bot.player
@@ -33,13 +33,13 @@ message.channel.send({embeds : [learnrighnow]});
 
 
 bot.on("chat", (username, message) => {
-  if (username === bot.username) return 
+  if (username === bot.username) return
   if (message === `${prefix}info`) {
 bot.whisper(username, (`this bot is made for the people that apreciate the anarchy community`))
         }
 })
 
-      
+
 const botlogs = client.channels.cache.get(channellogs)
 bot.on("chat", (username, message) => {
   if (username === bot.username) return
@@ -74,6 +74,6 @@ bot.whisper(username, (`hi there`))
       bot.on('whisper', (username, message, rawMessage) => {
           console.log(`I received a message from ${username}: ${message}`)
           bot.whisper(username, 'thanks for ur information')
-          
+
       })
 
